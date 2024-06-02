@@ -16,11 +16,18 @@ export async function generateMetadata({
   const icon = getHomeSprite(dexNo);
   return {
     title: `${dexNo} | ${pokemonName} | ToxaDex`,
+    viewport:
+      'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover',
+    applicationName: `${dexNo} | ${pokemonName} | ToxaDex`,
+    authors: [{ name: 'Nil Xie' }],
+    keywords: 'pokemon, dex, pokeapi, toxadex',
+    publisher: 'Nil Xie',
     icons: {
       icon: icon,
       apple: icon,
       shortcut: icon,
     },
+    bookmarks: [icon],
   };
 }
 

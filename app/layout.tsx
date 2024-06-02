@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { preconnect, prefetchDNS } from 'react-dom';
 import '@/styles/globals.css';
@@ -10,14 +10,6 @@ export const metadata: Metadata = {
   description: 'Pokemon dex',
   authors: [{ name: 'Nil Xie' }],
   creator: 'Nil Xie',
-};
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  viewportFit: 'cover',
 };
 
 export default function RootLayout({
