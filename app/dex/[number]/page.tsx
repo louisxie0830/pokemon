@@ -2,7 +2,6 @@ import { getHomeSprite, getPokemonData } from '@/lib/pokemon';
 import PokemonDataPage from '@/components/PokemonDataPage';
 import { Metadata } from 'next';
 
-
 type PageProps = {
   params: {
     number: string;
@@ -14,11 +13,13 @@ export async function generateMetadata({
   const dexNo = params.number;
   const pokemonData = await getPokemonData(dexNo);
   const pokemonName = pokemonData.name;
-
+  const icon = getHomeSprite(dexNo);
   return {
     title: `${dexNo} | ${pokemonName} | ToxaDex`,
     icons: {
-      icon: getHomeSprite(dexNo),
+      icon: icon,
+      apple: icon,
+      shortcut: icon,
     },
   };
 }

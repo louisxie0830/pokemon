@@ -11,6 +11,7 @@ import Type from './Type';
 import EvolutionCard from './EvolutionCard';
 import StatsCard from './StatsCard';
 import MatchupCard from './MatchupCard';
+import { useRouter } from 'next/router';
 
 type abilitesType = {
   isHidden: boolean;
@@ -18,6 +19,7 @@ type abilitesType = {
 };
 
 export default function PokemonDataPage({ number, pokemonData }: any) {
+  const router = useRouter();
   const [vibrantColor, setVibrantColor] = useState<string>('#FFFFFF');
   const [abilities, setAbilities] = useState<abilitesType[]>([]);
   const [pokemonName, setPokemonName] = useState<string>('');
@@ -45,12 +47,12 @@ export default function PokemonDataPage({ number, pokemonData }: any) {
 
   const handlePrev = () => {
     if (Number(number) === 1) return;
-    // else router.push(`/dex/${Number(pokemonNo) - 1}`);
+    else router.push(`/dex/${Number(number) - 1}`);
   };
 
   const handleNext = () => {
     if (Number(number) === 898) return;
-    // else router.push(`/dex/${Number(pokemonNo) + 1}`);
+    else router.push(`/dex/${Number(number) + 1}`);
   };
 
   const handlers = useSwipeable({
