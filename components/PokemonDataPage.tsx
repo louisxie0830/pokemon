@@ -11,7 +11,7 @@ import Type from './Type';
 import EvolutionCard from './EvolutionCard';
 import StatsCard from './StatsCard';
 import MatchupCard from './MatchupCard';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 type abilitesType = {
   isHidden: boolean;
